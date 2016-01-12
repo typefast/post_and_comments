@@ -8,8 +8,21 @@ class PostsController < ApplicationController
   end
   
   def create
+    @post = Post.new(post_params)
+    if @post.save
+      flash[:success] = "Post Created!"
+      render :new
+    else 
+      flash[:error] = "An error ocurred!"
+      render :new
+    end
   end
 
   def show
   end
+  
+  private 
+    def post_params
+      params.require(:post).permit(:title, :body)
+    end
 end

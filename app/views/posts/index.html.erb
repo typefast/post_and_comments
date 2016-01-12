@@ -1,3 +1,10 @@
-<h3>Posts</h3>
+
 
 <p><%= link_to 'New Post', posts_new_path %></p>
+
+<h3>Posts</h3>
+
+<% @posts.each do |post| %>
+  <h3><%= post.title %></h3>
+  <p><%= post.body %></p>
+<% end %>
