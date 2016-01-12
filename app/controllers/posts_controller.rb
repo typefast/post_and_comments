@@ -21,6 +21,17 @@ class PostsController < ApplicationController
       render :new
     end
   end
+  
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      flash[:success] = "Post Updated!"
+      redirect_to @post
+    else
+      flash[:error] = "An error ocurred, Post not updated!"
+      render "edit"
+    end
+  end
 
   def show
     @post = Post.find(params[:id])
