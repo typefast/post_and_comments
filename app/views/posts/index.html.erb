@@ -1,10 +1,10 @@
-
-
-<p><%= link_to 'New Post', new_post_path %></p>
-
-<h3>Posts</h3>
+<h2 class="text-center">Posts</h2>
 
 <% @posts.each do |post| %>
-  <h3><%= link_to post.title, post_path(post) %></h3>
-  <p><%= post.body %></p>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 post">
+      <h3><%= link_to post.title, post_path(post) %></h3>
+      <p><%= post.body %></p>
+    </div>
+  </div>
 <% end %>
