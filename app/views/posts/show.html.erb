@@ -3,6 +3,13 @@
 
 <p><%=link_to "Edit", edit_post_path %></p>
 
+<h2>Comments</h2>
+
+<% @post.comments.each do |comment| %>
+  <p>Name: <%= comment.name %></p>
+  <p>Comment <%= comment.body %></p>
+<% end %>
+
 <h3>Add Comment</h3>
 
 <%= form_for [@post, @post.comments.build] do |f| %>
