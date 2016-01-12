@@ -1,11 +1,26 @@
-<h3>New Post</h3>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="well">
+      
+      <h3>New Post</h3>
+      
+      <%= form_for @post, url: { action: "create" } do |post| %>
+      <div class="form-group">
+        <%= post.label :title %>
+        <%= post.text_field :title, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= post.label :body %>
+        <%= post.text_area :body, class: 'form-control' %>
+      </div>
+        
+        <%= post.submit "Submit", class: 'btn btn-success' %>
+      <% end %>
+      
+    </div>
+  </div>
+</div>
 
-<%= form_for @post, url: { action: "create" } do |post| %>
-  <%= post.label :title %>
-  <%= post.text_field :title %>
-  
-  <%= post.label :body %>
-  <%= post.text_area :body %>
-  
-  <%= post.submit "Submit" %>
-<% end %>
+
+
