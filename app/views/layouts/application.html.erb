@@ -35,9 +35,13 @@
 </nav>
 
 <div class="container">
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: name %>
-  <% end %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: name %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <div class="container">
