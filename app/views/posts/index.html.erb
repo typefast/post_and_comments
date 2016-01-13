@@ -1,7 +1,7 @@
 <h2 class="text-center">Posts</h2>
 
 <% @posts.each do |post| %>
-  <div class="row">
+  <div class="row post-buffer">
     <div class="col-md-6 col-md-offset-3 post">
       <h3><%= link_to post.title, post_path(post) %></h3>
       <p><%= post.body %></p>
